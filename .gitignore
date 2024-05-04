@@ -1,0 +1,5 @@
+# Ignore npm
+node_modules/
+
+# Ignore git
+.git/

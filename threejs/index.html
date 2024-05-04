@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> -->
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+        <!-- <link rel="manifest" href="/site.webmanifest"> -->
+        <meta charset="utf-8">
+        <title>My first three.js app</title>
+        <style>
+            body { margin: 0; }
+        </style>
+    </head>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "./node_modules/three/build/three.module.js",
+            "three/": "./node_modules/three/"
+            "dat.gui": "./node_modules/dat.gui/build/dat.gui.module.js",
+          }
+        }
+    </script> 
+	<body>
+		<script type="module" src="./main.js"></script>
+	</body>
+</html>
