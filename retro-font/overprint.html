@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGA Text Effect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            height: 100vh;
+            margin: 0;
+        }
+
+        .cga-text {
+            position: relative;
+            font-family: 'Press Start 2P', monospace;
+            font-size: 24px;
+            /* Adjust as needed */
+            color: white;
+        }
+
+        .cga-text::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: green;
+            clip-path: inset(0 50% 0 0);
+            /* Show only the left half */
+        }
+
+        .cga-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: purple;
+            clip-path: inset(0 0 0 50%);
+            /* Show only the right half */
+        }
+
+        /* .cga-text span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            z-index: 1;
+        } */
+
+        /* .cga-text::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: green;
+            transform: translateX(-2px); 
+        z-index: -1;
+        }
+
+        .cga-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: purple;
+            transform: translateX(4px);
+            z-index: -1;
+        } */
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="cga-text" data-text="This is a CGA text effect">
+        <span>This is a CGA text effect</span>
+    </div>
+</body>
+
+</html>

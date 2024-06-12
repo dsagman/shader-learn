@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGA Text Effect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'RetroFont';
+            src: url('WebPlus_IBM_CGA-2y.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            height: 100vh;
+            margin: 0;
+        }
+
+        .cga-text {
+            /* font-family: 'Press Start 2P', monospace; */
+            font-family: 'RetroFont', monospace;
+            font-size: 24px;
+            color: transparent;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cga-char {
+            /* background: linear-gradient(to right, rgb(77, 243, 0) 15%, white 15%, white 75%, rgb(228, 7, 228) 75% ); */
+            background: linear-gradient(to right, rgb(77, 243, 0), white, rgb(228, 7, 228));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="color: white">hello</p>
+    <div id="cga-text-container"></div>
+
+    <script>
+        const text = "This is a CGA text effect";
+        const container = document.getElementById('cga-text-container');
+        container.className = 'cga-text';
+
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'cga-char';
+            if (char === ' ') {
+                span.classList.add('space');
+                span.innerHTML = '&nbsp;'; // Use non-breaking space
+            } else {
+                span.textContent = char;
+            }
+            container.appendChild(span);
+        });
+    </script>
+</body>
+
+</html>
